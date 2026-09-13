@@ -1,7 +1,7 @@
-HSPC-atlas 
 The hematopoietic cell atlas, with 4,009,136 cells including hematopoietic stem and progenitor cells and mature hematopoietic cells
 
 Data browser
+
 Data browser incorporates two cellxgene plug-ins, offering interactive visualization interfaces for integrated data on both hematopoietic stem and progenitor cell atlas and mature hematopoietic cell atlas.
 
 Portraits of hematopoietic Atlas
