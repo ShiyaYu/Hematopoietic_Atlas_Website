@@ -28,6 +28,6 @@ A multi-scale analytical framework designed to explore hematopoiesis from differ
 ---
 
 ## 🛠️ Quick Links
-* **Website Home**: [https://www.biosino.org/HSPC-atlas/index.html](#https://www.biosino.org/HSPC-atlas/index.html)
-* **Data Exploration**: [https://www.biosino.org/HSPC-atlas/data-browser/hspc.html](#)
-* **User Guides**: [https://www.biosino.org/HSPC-atlas/documents.html](#)
+* **Website Home**: [Index](https://www.biosino.org/HSPC-atlas/index.html)
+* **Data Exploration**: [HSPC data browser](https://www.biosino.org/HSPC-atlas/data-browser/hspc.html)
+* **User Guides**: [Documents](https://www.biosino.org/HSPC-atlas/documents.html)
