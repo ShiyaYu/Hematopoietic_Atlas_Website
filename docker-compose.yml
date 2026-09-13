@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # 前端与内部路由中心
+  atlas-frontend:
+    image: nginx:alpine
+    container_name: atlas_frontend
+    ports:
+      - "8080:80"  # 暴露给宿主机 Nginx 代理的唯一入口端口
+    volumes:
+      - ./WEB:/usr/share/nginx/html  # 挂载您的静态前端代码
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf  # 挂载上文的路由规则
+    depends_on:
+      - cellxgene-hspc
+      - cellxgene-blood
+    restart: always
+
+  # HSPC 数据后端
+  cellxgene-hspc:
+    build:
+      context: .
+      dockerfile: Dockerfile.cellxgene
+    container_name: atlas_backend_hspc
+    volumes:
+      - ./WEB/data/hspc.h5ad:/data/hspc.h5ad
+    command: cellxgene launch /data/hspc.h5ad --host 0.0.0.0 --port 5005 --disable-annotations --backed
+    restart: always
+
+  # Blood Atlas 数据后端
+  cellxgene-blood:
+    build:
+      context: .
+      dockerfile: Dockerfile.cellxgene
+    container_name: atlas_backend_blood
+    volumes:
+      - ./WEB/data/blood-atlas.h5ad:/data/blood-atlas.h5ad
+    command: cellxgene launch /data/blood-atlas.h5ad --host 0.0.0.0 --port 5006 --disable-annotations --backed
+    restart: always

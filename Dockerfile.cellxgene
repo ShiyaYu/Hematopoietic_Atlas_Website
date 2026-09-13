@@ -1,0 +1,6 @@
+FROM python:3.9-slim
+# 安装编译底层依赖
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
+# 安装 cellxgene
+RUN pip install --no-cache-dir cellxgene
+EXPOSE 5005 5006
