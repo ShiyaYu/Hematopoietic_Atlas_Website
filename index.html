@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hematopoietic Atlas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <nav class="navbar-wrapper">
+        <div class="navbar-content">
+            <div class="nav-brand">Hematopoietic Atlas</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Data Browser <span class="arrow">v</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="data-browser/hspc.html">HSPC</a></li>
+                        <li><a href="data-browser/blood-atlas.html">Blood Atlas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Portraits <span class="arrow">v</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="portraits/tissues.html">Tissues</a></li>
+                        <li><a href="portraits/cell-types.html">Cell types</a></li>
+                        <li><a href="portraits/genes.html">Genes</a></li>
+                    </ul>
+                </li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="documents.html">Documents</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 标题介绍区 (图片铺满) -->
+    <header class="hero">
+        <!-- 这里的图片会自动根据屏幕宽度伸缩 -->
+        <img src="images/main/title-banner.png" alt="Hematopoietic Atlas Banner" class="hero-image">
+		<p class="subtitle">The hematopoietic cell atlas, with 4,009,136 cells including hematopoietic stem and progenitor cells and mature hematopoietic cells</p>
+    </header>
+
+    <!-- 主体内容区 -->
+    <main class="container">
+        
+        <!-- 左侧区域：Explore -->
+        <section class="left-col">
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon"></span> Explore Hematopoietic Atlas
+                </div>
+                
+                <div class="umap-image-area">
+                    <img src="images/main/main.png" alt="Main UMAP" class="umap-image-contain">
+                </div>
+
+                <div class="portrait-cards">
+                    <a href="./portraits/tissues.html" class="portrait-btn theme-orange">
+                        <div class="img-placeholder">
+                            <img src="images/main/tissues.png" alt="Tissues" class="fit-btn-image">
+                        </div>
+                        <div class="btn-label">Portraits of tissues</div>
+                    </a>
+                    
+                    <a href="./portraits/cell-types.html" class="portrait-btn theme-blue">
+                        <div class="img-placeholder">
+                            <img src="images/main/celltypes.png" alt="Cell types" class="fit-btn-image">
+                        </div>
+                        <div class="btn-label">Portraits of cell types</div>
+                    </a>
+                    
+                    <a href="./portraits/genes.html" class="portrait-btn theme-green">
+                        <div class="img-placeholder">
+                            <img src="images/main/genes.png" alt="Genes" class="fit-btn-image">
+                        </div>
+                        <div class="btn-label">Portraits of genes</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 右侧区域：Data & Contact -->
+        <aside class="right-col">
+            
+            <!-- 数据统计 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon"></span> Data in the Hematopoietic Atlas
+                </div>
+                <div class="stats-grid">
+				    <img src="images/main/statistics.png" alt="statistics" class="fit-btn-image">
+                </div>
+            </div>
+
+            <!-- 联系方式 -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon"></span> Contact
+                </div>
+                <div class="contact-content">
+                    <p>Wenfei Jin (corresponding author) | jinwf@sinh.ac.cn</p>
+                    <p>Shiya Yu | syyu@sinh.ac.cn</p>
+                    <p>Shanghai Institute of Nutrition and Health, University of Chinese Academy of Sciences, Chinese Academy of Sciences, Shanghai, 200031, China;</p>
+                    <p>School of Life Sciences, Southern University of Science and Technology, Shenzhen, China</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- 底部区 -->
+    <footer class="footer">
+        <h3 class="footer-title">Human Blood Dataset</h3>
+		<h3 class="footer-links">Developed by Jinlab, SINH, CAS, China</h2>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

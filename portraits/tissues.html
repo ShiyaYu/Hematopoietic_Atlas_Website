@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portraits of Tissues - Hematopoietic Atlas</title>
+    <link rel="stylesheet" href="../css/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+  <nav class="navbar-wrapper">
+        <div class="navbar-content">
+            <div class="nav-brand">Hematopoietic Atlas</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Data Browser <span class="arrow">v</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../data-browser/hspc.html">HSPC</a></li>
+                        <li><a href="../data-browser/blood-atlas.html">Blood Atlas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="active">Portraits <span class="arrow">v</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tissues.html">Tissues</a></li>
+                        <li><a href="cell-types.html">Cell types</a></li>
+                        <li><a href="genes.html">Genes</a></li>
+                    </ul>
+                </li>
+                <li><a href="../download.html">Download</a></li>
+                <li><a href="../documents.html">Documents</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+	<div class="page-header-container">
+        <h1 class="page-main-title">Portraits of Tissues</h1>
+    </div>
+
+    <main class="tissues-container">
+        
+        <div class="content-col">          
+            <section id="tissue-scale" class="scale-section">
+				<div class="card-header">Tissue Scale</div>
+                <p class="section-desc">We provide the description of tissues associated with human hematopoiesis.<br>
+                Tissue for HSPC: bone marrow, blood, spleen, thymus<br>
+                Tissue for Whole: bone marrow, blood, spleen, cord blood, lung-draining lymph nodes, mesenteric lymph nodes.</p>
+                
+                <div class="body-map-container">
+                    <img src="../images/human-body-bg.png" alt="Human Body Map" class="body-bg">
+                    
+                    <button class="organ-btn" data-tissue="Thymus" style="top: 9.5%; left: 17%;">Thymus</button>
+                    <button class="organ-btn" data-tissue="Lung-draining Lymph Nodes" style="top: 5.5%; right: -10%;">Lung-draining Lymph Nodes</button>
+                    <button class="organ-btn active" data-tissue="Bone Marrow" style="top: 20.5%; right: 7%;">Bone Marrow</button>
+                    <button class="organ-btn" data-tissue="Spleen" style="top: 36.5%; right: 14.5%;">Spleen</button>
+                    <button class="organ-btn" data-tissue="Blood" style="top: 39%; left: 9.5%;">Blood</button>
+                    <button class="organ-btn" data-tissue="Mesenteric Lymph Nodes" style="top: 59%; left: -5%;">Mesenteric Lymph Nodes</button>
+                    <button class="organ-btn" data-tissue="Cord Blood" style="top: 61%; right: 8%;">Cord Blood</button>
+                </div>
+
+                <div class="tissue-info-card">
+                    <div class="info-header">
+                        <h3 id="info-title">Bone Marrow</h3>
+                    </div>
+                    <p id="info-desc">Loading description...</p>
+                </div>
+            </section>
+			
+			<section id="cellular-scale" class="scale-section card">
+				<div class="card-header">Cellular Scale</div>
+                <p class="chart-desc">Here we provide the cell-type composition of each tissue unit and visualize the estimated cell-type proportions in the following pie plot and bar plot.</p>
+                <div class="charts-grid">
+                    <div id="pie-chart-container" class="chart-box"></div>
+                    <div id="bar-chart-container" class="chart-box"></div>
+                </div>
+            </section>
+
+            <section id="molecular-scale" class="scale-section card">
+				<div class="card-header">Molecular Scale</div>
+                <p class="chart-desc">We calculate the highly expressed genes across tissues based on the pseudo bulk data generated from our estimated cell-type proportions. We visualize results in the following heat maps.</p>
+                <div id="heatmap-1-container" class="chart-box heatmap-box"></div>
+                <p class="chart-desc">We also calculate the significantly enriched gene groups across tissues. We visualize results of GO terms and -log(p value) in the following heat maps.</p>
+                <div id="heatmap-2-container" class="chart-box heatmap-box"></div>
+            </section>
+
+        </div>
+
+        <aside class="tissues-sidebar-col">
+            <div class="tissues-sticky-sidebar">               
+                <div class="ctrl-group">
+                    <h4>Select a perspective:</h4>
+                    <a href="#tissue-scale" class="nav-btn active">Tissue Scale</a>
+                    <a href="#cellular-scale" class="nav-btn">Cellular Scale</a>
+                    <a href="#molecular-scale" class="nav-btn">Molecular Scale</a>
+                </div>
+
+                <div class="ctrl-group">
+                    <h4>Data to view:</h4>
+                    <div class="toggle-switch">
+                        <button class="dataset-btn active" data-dataset="HSPC">HSPC</button>
+                        <button class="dataset-btn" data-dataset="Whole">Whole</button>
+                    </div>
+                </div>
+
+                <div class="ctrl-group">
+                    <h4>Selected structural unit:</h4>
+                    <select id="tissue-select" class="tissue-dropdown">
+                        <option value="Bone Marrow">Bone Marrow</option>
+                        <option value="Thymus">Thymus</option>
+                        <option value="Spleen">Spleen</option>
+                        <option value="Blood">Blood</option>
+                        <option value="Lung-draining Lymph Nodes">Lung-draining Lymph Nodes</option>
+                        <option value="Mesenteric Lymph Nodes">Mesenteric Lymph Nodes</option>
+                        <option value="Cord Blood">Cord Blood</option>
+                    </select>
+                </div>
+
+                <button id="back-to-top" class="back-top-btn">^ Back to top</button>
+            </div>
+        </aside>
+    </main>
+		
+    
+
+    <footer class="footer">
+        <h3 class="footer-title">Human Blood Dataset</h3>
+        <h3 class="footer-links">Developed by Jinlab, SINH, CAS, China</h2>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/tissues.js"></script>
+</body>
+</html>
